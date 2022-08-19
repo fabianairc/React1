@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+* {
+  margin: 0;
+  font-family: "quicksand";
+  color: #333;
+}
+.Navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0;
+  border-bottom: 1px, solid, #333;
+}
+.Navbar h1 {
+  color: red;
+}
+
+.Navbar .links {
+  margin-left: auto;
+}
+.Navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.Navbar a:hover {
+  color: red;
+}
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
