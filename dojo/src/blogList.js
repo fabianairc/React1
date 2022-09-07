@@ -13,7 +13,7 @@ const BlogList = (props) => {
             <h1>{title}</h1>
             <h1> {blog.title}</h1>
             <h2> Written by {blog.author}</h2>
-            <button onClick={()=> handleDelete (blog.id)}></button>
+            
           </div>
         
         )
