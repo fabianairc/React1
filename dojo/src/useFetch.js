@@ -1,14 +1,19 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
+    
+const [data, setData] = useState(null);
+const [isPending, setIsPending] = useState(true);
+const [Error, setError] = useState(null);
+
 const useFetch(url)=>{  useEffect(() => {
-    const [data, setData] = useState(null);
-    const [isPending, setIsPending] = useState(true);
-    const [Error, setError] = useState(null);
+
+    cons abrtCont= new AbortController()
+
   
 
 
-    fetch(url)
+    fetch(url,{signal: abrtCont.signal})
       .then((res) => {
         if (!res.ok) {
           throw Error("could not fetch the data for thart resource");
@@ -22,11 +27,19 @@ const useFetch(url)=>{  useEffect(() => {
         setIsPending(false);
       })
       .catch((err) => {
-        setIsPending(false);
-        setError(err.message);
-        setError(null);
+        if (err.name  === "AbortError") {
+            console.log("fetch aborted")
+            else{
+                setIsPending(false);
+                setError(err.message);
+                setError(null);
+            }
+        }
+        
       });
+      return ()=>{abrtCont.abort()};
   }, []);
+
  return {data, isPending, Error}
 }
 export default useFetch
