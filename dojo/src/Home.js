@@ -1,4 +1,4 @@
-import BlogList from "./blogList";
+gitimport BlogList from "./blogList";
 import useFetch from "./useFetch";
 
 const Home = () => {
