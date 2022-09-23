@@ -8,7 +8,7 @@ const [Error, setError] = useState(null);
 
 const useFetch(url)=>{  useEffect(() => {
 
-    const abrtCont= new AbortController()
+    constgit  abrtCont= new AbortController()
 
   
 
