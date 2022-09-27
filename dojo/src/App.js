@@ -17,7 +17,7 @@ function App() {
             <Route path="/Create">
               <Create />
             </Route>
-            <Route path="/blog\:id">
+            <Route path="/blog/:id">
               <blogDetails />
             </Route>
           </Switch>
